@@ -1,9 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<?php
-	include('loginValidation.php');
-	?>
+    <?php
+    include_once "config.php";
+    $page_title = "Login";
+    //login checker
+    //include_once "loginCheck.php";
+    //$require_login = false;
+
+    $access_denied = false;
+
+    // post code will be here
+
+    if($_POST){
+        // email check will be here
+        // include classes
+        include_once "GateKeeper.php";
+        include_once "Objects/Users.php";
+
+        $GateKeeper = new GateKeeper();
+        $dbKey = $GateKeeper->getConnection();
+
+        // initialize objects
+        $currentUser = new Users($dbKey);
+
+        // check if email and password are in the database
+        $currentUser->email=$_POST['txtBoxEmail'];
+
+        // check if email exists, also get user details using this emailExists() method
+        $email_exists = $currentUser->emailExists();
+
+        // login validation will be here
+        if ($email_exists && password_verify($_POST['txtBoxPassword'], $currentUser->password)){
+
+            // if it is, set the session value to true
+            $_SESSION['logged_in'] = true;
+            $_SESSION['user_id'] = $currentUser->user_id;
+            $_SESSION['role_id'] = $currentUser->role_id;
+            $_SESSION['firstname'] = htmlspecialchars($currentUser->first_name, ENT_QUOTES, 'UTF-8') ;
+            $_SESSION['surname'] = $currentUser->surname;
+
+            if($currentUser->role_id == 1){
+                header("Location: {$home_url}dashboardAdminSupport.php?action=login_success");
+            } elseif ($currentUser->role_id == 2){
+                header("Location: {$home_url}dashboardAdminHardware.php?action=login_success");
+            } elseif ($currentUser->role_id == 3){
+                header("Location: {$home_url}dashboardSalesRep.php?action=login_success");
+            } else {
+                header("Location: {$home_url}dashboardBarManager.php?action=login_success");
+            }
+        }
+
+        // if username does not exist or password is wrong
+        else{
+            $access_denied = true;
+        }
+
+    }
+
+    //include('loginValidation.php');
+    ?>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -15,7 +71,7 @@
 	<div class="container">
 		<div class="panelLogin">
 			<img id="imgLogo" src="images/logoBoston.png">
-            <form action="/loginValidation.php" method="post">
+            <form action='$_SEVER["PHP_SELF"]'  method="post">
 				<input type="text" id="txtBoxUsername" name="txtBoxUsername" value="" placeholder="Email">
 				<input type="password" id="txtBoxPassword" name="txtBoxPassword" value="" placeholder="Password">
 				<input type="button" name="btnLogin" id="btnLogin" class="btn" value="Login" style="text-align:center;">

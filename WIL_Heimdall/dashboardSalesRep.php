@@ -19,7 +19,7 @@
 				<a id="btnClientReport" class="btn" href=""><p>Client Reports</p></a>
 				<a id="btnSalesReports" class="btn" href=""><p>Sales Reports</p></a>
 				<a id="btnFaultLogging" class="btn" href=""><p>Fault Logging</p></a>
-				<a id="btnLogout" class="btn" href=""><p>Log Out</p></a>
+				<a id="btnLogout" class="btn" href="logout.php"><p>Log Out</p></a>
 		</div>
 		<!--HEADER PANEL-->
         <div class="panelHeader">
