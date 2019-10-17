@@ -6,9 +6,12 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
 <title>Notes Form</title>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <!-- Changed File paths here -->
 <link rel="stylesheet" href="css/main.css" type="text/css">
+    <!-- Changed File paths here -->
 <link rel="stylesheet" href="css/formNotes.css" type="text/css">
 </head>
+<!-- Changed File paths here -->
 <body style="background-image: url(images/woodtexture.jpg);">
 	<div class="container">
 		<!--NAVIGATION BAR PANEL-->
@@ -16,9 +19,11 @@
 			<img id="imgLogo" src="images/logoBoston.png">
 			<div id="lblCurrentPage"><p><b>Notes</b></p></div>
 				<a id="btnHome" class="btn" href="dashboardSalesRep.php"><p>Home</p></a>
+            <!-- Changed File paths here -->
 				<a name="btnManageClients" id="btnManageClients" class="btn" href="formManageClients.php"><p>Manage Clients</p></a>
 				<a id="btnClientReport" class="btn" href=""><p>Client Reports</p></a>
 				<a id="btnSalesReports" class="btn" href=""><p>Sales Reports</p></a>
+            <!-- Changed File paths here -->
 				<a id="btnLogout" class="btn" href="logout.php"><p>Log Out</p></a>
 		</div>
 		<!--HEADER PANEL-->
