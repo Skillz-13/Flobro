@@ -6,20 +6,20 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
 <title>Notes Form</title>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-<link rel="stylesheet" href="WIL_Heimdall/css/main.css" type="text/css">
-<link rel="stylesheet" href="WIL_Heimdall/css/formNotes.css" type="text/css">
+<link rel="stylesheet" href="css/main.css" type="text/css">
+<link rel="stylesheet" href="css/formNotes.css" type="text/css">
 </head>
-<body style="background-image: url(WIL_Heimdall/images/woodtexture.jpg);">
+<body style="background-image: url(images/woodtexture.jpg);">
 	<div class="container">
 		<!--NAVIGATION BAR PANEL-->
 		<div class="panelNavBar">
-			<img id="imgLogo" src="WIL_Heimdall/images/logoBoston.png">
+			<img id="imgLogo" src="images/logoBoston.png">
 			<div id="lblCurrentPage"><p><b>Notes</b></p></div>
-				<a id="btnHome" class="btn" href="WIL_Heimdall/dashboardSalesRep.php"><p>Home</p></a>
-				<a name="btnManageClients" id="btnManageClients" class="btn" href="WIL_Heimdall/formManageClients.php"><p>Manage Clients</p></a>
+				<a id="btnHome" class="btn" href="dashboardSalesRep.php"><p>Home</p></a>
+				<a name="btnManageClients" id="btnManageClients" class="btn" href="formManageClients.php"><p>Manage Clients</p></a>
 				<a id="btnClientReport" class="btn" href=""><p>Client Reports</p></a>
 				<a id="btnSalesReports" class="btn" href=""><p>Sales Reports</p></a>
-				<a id="btnLogout" class="btn" href="WIL_Heimdall/logout.php"><p>Log Out</p></a>
+				<a id="btnLogout" class="btn" href="logout.php"><p>Log Out</p></a>
 		</div>
 		<!--HEADER PANEL-->
         <div class="panelHeader">
