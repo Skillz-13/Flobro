@@ -42,16 +42,20 @@
 
             if($currentUser->role_id == 1){
                 header("Location: {$home_url}dashboardAdminSupport.php?action=login_success");
+                //header("Location: {$home_url}dashboardAdminSupport.php");
             } elseif ($currentUser->role_id == 2){
                 header("Location: {$home_url}dashboardAdminHardware.php?action=login_success");
+                //header("Location: {$home_url}dashboardAdminHardware.php");
             } elseif ($currentUser->role_id == 3){
                 header("Location: {$home_url}dashboardSalesRep.php?action=login_success");
+                //header("Location: {$home_url}dashboardSalesRep.php");
             } else {
                 header("Location: {$home_url}dashboardBarManager.php?action=login_success");
+                //header("Location: {$home_url}dashboardBarManager.php");
             }
         }
 
-        // if username does not exist or password is wrong
+        // if email does not exist or password is wrong
         else{
             $access_denied = true;
         }
