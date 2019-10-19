@@ -26,7 +26,7 @@ class Users{
     function emailExists(){
 
         // query to check if email exists
-        $query = "SELECT USER_ID, FIRST_NAME, SURNAME, CONTACT_NUMBER, PASSWORD, ROLE_ID, VALID
+        $query = "SELECT *
             FROM " . $this->table_name . "
             WHERE email = ?
             LIMIT 0,1";

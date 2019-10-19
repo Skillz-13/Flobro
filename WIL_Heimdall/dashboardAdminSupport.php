@@ -13,7 +13,7 @@
     include_once "config.php";
     $page_title="Dashboard";
     $require_login = true;
-    include_once "login_checker.php";
+    //include_once "login_checker.php";
     ?>
 </head>
 <body style="background-image: url(images/woodtexture.jpg);">
