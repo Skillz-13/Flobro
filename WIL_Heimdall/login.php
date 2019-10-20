@@ -36,6 +36,8 @@
 
         if($email_exists && $currentUser->password == $_POST['txtBoxPassword']){
 
+            session_start();
+
             // if it is, set the session value to true
             $_SESSION['logged_in'] = true;
             $_SESSION['user_id'] = $currentUser->user_id;

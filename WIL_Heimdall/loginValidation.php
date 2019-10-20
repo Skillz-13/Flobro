@@ -1,6 +1,6 @@
 <?php
 
-require "pdoDB.php";
+//require "pdoDB.php";
 
 $currentUser = null;
 $currentPassword = null;
@@ -8,6 +8,7 @@ $currentPassword = null;
 
 
 if(!isset($_POST)){
+    session_start();
     $currentUser = $_POST['txtBoxUsername'];
     $currentPassword = $_POST['txtBoxPassword'];
     $handle = $link -> prepare('SELECT * FROM TBL_USER WHERE EMAIL= ? AND PASSWORD =?');
@@ -22,7 +23,7 @@ if(!isset($_POST)){
         print($row->Username);
     }*/
     if($userRecord != null){
-        session_start();
+        //session_start();
         $_SESSION["role"] = $userRecord["roleID"];
         if($_SESSION["role"] == 0 ){
             echo "success";
