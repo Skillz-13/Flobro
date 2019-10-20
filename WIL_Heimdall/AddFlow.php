@@ -1,5 +1,8 @@
 <?php
 include "config.php";
+include "Objects/FlowReading.php";
+include "libs/Utils.php";
+include_once "GateKeeper.php";
 ?>
 
 <!DOCTYPE html>
@@ -8,11 +11,6 @@ include "config.php";
 </head>
 <body>
 <?php
-
-
-include "Objects/FlowReading.php";
-include "libs/Utils.php";
-include_once "GateKeeper.php";
 
 if(isset($_GET['imei'])) {
 

@@ -1,6 +1,9 @@
 <?php
 include "config.php";
+include_once "GateKeeper.php";
+include_once "Objects/Users.php";
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,8 +21,7 @@ include "config.php";
     if(isset($_POST['btnLogin'])){
         // email check will be here
         // include classes
-        include_once "GateKeeper.php";
-        include_once "Objects/Users.php";
+
 
         $GateKeeper = new GateKeeper();
         $dbKey = $GateKeeper->getConnection();
