@@ -36,6 +36,8 @@
 
         if($email_exists && $currentUser->password == $_POST['txtBoxPassword']){
 
+            session_start();
+
             // if it is, set the session value to true
             $_SESSION['logged_in'] = true;
             $_SESSION['user_id'] = $currentUser->user_id;
@@ -57,6 +59,7 @@
                 header("Location: {$home_url}dashboardBarManager.php?action=login_success");
                 //header("Location: {$home_url}dashboardBarManager.php");
             } else{
+                //change to error message
                 header("Location: {$home_url}TestPage.php");
             }
         }
@@ -69,6 +72,7 @@
            else{
             $access_denied = true;
             //header("Location: {$home_url}TestPage.php");
+               //not able to login in message
                echo "it broke";
         }
 

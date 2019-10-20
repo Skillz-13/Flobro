@@ -1,7 +1,7 @@
 <?php
 
 $link = new PDO(    'mysql:host=localhost;
-dbname=test;
+dbname=;
 charset=utf8mb4',
     'root',
     '',
