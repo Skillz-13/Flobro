@@ -19,7 +19,7 @@
 				<a name="btnManageFlowmeters" id="btnManageFlowmeters" class="btn" href=""><p>Manage Flowmeters</p></a>
 				<a id="-" class="btn" href=""><p>-</p></a>
 				<a id="-" class="btn" href=""><p>-</p></a>
-				<a id="btnLogout" class="btn" href=""><p>Log Out</p></a>
+				<a id="btnLogout" class="btn" href="logout.php"><p>Log Out</p></a>
 		</div>
 		<!--HEADER PANEL-->
         <div class="panelHeader">

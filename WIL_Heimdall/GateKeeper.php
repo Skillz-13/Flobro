@@ -1,18 +1,28 @@
 <?php
 
-$location ="localhost";
-$user = "root";
-$password = "";
-$database = "test";
+// used to get mysql database connection
+class GateKeeper{
 
-$DBConnect = NULL;
-$ErrorMsgs = array();
-$DBConnect = @new mysqli($location,$user,$password,$database);
-if($DBConnect->connect_error){
-    $ErrorMsgs[] = "The database server is not available" ;
-    echo "Error in communcation ". $DBConnect->connect_error;
+    // specify your own database credentials
+    private $host = "localhost";
+    private $db_name = "bostoczw_Test";
+    private $username = "root";
+    private $password = "";
+    public $DBconnect;
+
+    // get the database connection
+    public function getConnection(){
+
+        $this->DBconnect = null;
+
+        try{
+            $this->DBconnect = new PDO("mysql:host=" . $this->host . ";dbname=" . $this->db_name, $this->username, $this->password);
+            //echo "Connection Successful";
+        }catch(PDOException $exception){
+            echo "Connection error: " . $exception->getMessage();
+        }
+
+        return $this->DBconnect;
+    }
 }
-else{
-    echo"Connection Made";
-};
 

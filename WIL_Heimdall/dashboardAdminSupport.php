@@ -8,6 +8,13 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 <link rel="stylesheet" href="css/main.css" type="text/css">
 <link rel="stylesheet" href="css/dashboardAdminSupport.css" type="text/css">
+
+    <?php
+    include_once "config.php";
+    $page_title="Dashboard";
+    $require_login = true;
+    //include_once "login_checker.php";
+    ?>
 </head>
 <body style="background-image: url(images/woodtexture.jpg);">
 	<div class="container">
@@ -19,7 +26,7 @@
 				<a name="btnReports" id="btnReports" class="btn" href=""><p>Reports</p></a>
 				<a id="-" class="btn" href=""><p>-</p></a>
 				<a id="-" class="btn" href=""><p>-</p></a>
-				<a id="btnLogout" class="btn" href=""><p>Log Out</p></a>
+				<a id="btnLogout" class="btn" href="logout.php"><p>Log Out</p></a>
 		</div>
 		<!--HEADER PANEL-->
         <div class="panelHeader">
