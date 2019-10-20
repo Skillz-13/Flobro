@@ -57,6 +57,7 @@
                 header("Location: {$home_url}dashboardBarManager.php?action=login_success");
                 //header("Location: {$home_url}dashboardBarManager.php");
             } else{
+                //change to error message
                 header("Location: {$home_url}TestPage.php");
             }
         }
@@ -69,6 +70,7 @@
            else{
             $access_denied = true;
             //header("Location: {$home_url}TestPage.php");
+               //not able to login in message
                echo "it broke";
         }
 
