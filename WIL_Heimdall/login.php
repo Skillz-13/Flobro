@@ -1,8 +1,11 @@
+<?php
+include "config.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <?php
-    include_once "config.php";
+    //include_once "config.php";
     $page_title = "Login";
     //login checker
     //include_once "loginCheck.php";
