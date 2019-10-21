@@ -10,11 +10,11 @@ session_start();
 date_default_timezone_set('Africa/Johannesburg');
 
 // Home directory location, change this on final site
-//changed url should be: $home_url = "http://flowbro.bostonbreweriesglutenfree.co.za/"
+//changed url should be: $home_url = "http://flowbro.bostonbreweriesglutenfree.co.za/";
 $home_url = "http://localhost/Flobro/WIL_Heimdall/";
 
 // Gets the page given and returns in URL parameter, default page is one, best practices implemented
-$page = isset($_GET['page']) ? $_GET['page'] : 1;
+//$page = isset($_GET['page']) ? $_GET['page'] : 1;
 
 // Set number of records per page, but not needed for now, this limits ddos attacks
 //$records_per_page = 5;
