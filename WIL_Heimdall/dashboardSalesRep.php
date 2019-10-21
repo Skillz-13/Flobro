@@ -16,10 +16,10 @@
 			<img id="imgLogo" src="images/logoBoston.png">
 			<div id="lblCurrentPage"><p><b>Home</b></p></div>
 				<a name="btnManageClients"id="btnManageClients" class="btn" href="formManageClients.php"><p>Manage Clients</p></a>
-				<a id="btnClientReport" class="btn" href=""><p>Client Reports</p></a>
-				<a id="btnSalesReports" class="btn" href=""><p>Sales Reports</p></a>
-				<a id="btnFaultLogging" class="btn" href=""><p>Fault Logging</p></a>
-				<a id="btnLogout" class="btn" href="logout.php"><p>Log Out</p></a>
+				<a name="btnClientReport" id="btnClientReport" class="btn" href="formClientReport.php"><p>Client Reports</p></a>
+				<a name="btnSalesReports" id="btnSalesReports" class="btn" href="formSalesReport.php"><p>Sales Reports</p></a>
+				<a name="btnNotes" id="btnNotes" class="btn" href="formNotes.php"><p>Notes</p></a>
+				<a name="btnLogout" id="btnLogout" class="btn" href="logout.php"><p>Log Out</p></a>
 		</div>
 		<!--HEADER PANEL-->
         <div class="panelHeader">
