@@ -1,5 +1,5 @@
 <?php
-//index.php
+
 $connect = mysqli_connect("localhost", "root", "", "test");
 $query = '
 SELECT PORT_NUMBER , UNIX_TIMESTAMP(CONCAT_WS(" ", DATE(LOG_DATE), TIME(LOG_DATE))) AS datetime  , VOLUME FROM tbl_log order by PORT_NUMBER
