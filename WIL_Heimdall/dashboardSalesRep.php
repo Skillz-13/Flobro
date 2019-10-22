@@ -25,6 +25,11 @@
         <div class="panelHeader">
 			<div id="lblWelcomeMessage">
 			<p>Sales Representative Dashboard</p>
+                <?php
+                session_start();
+                echo ($_SESSION['role_id']);
+                echo ($_SESSION['valid']);
+                ?>
 			<p>You are logged in as -Name- -Surname-</p>
 			</div>
 		</div>

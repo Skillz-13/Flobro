@@ -102,6 +102,4 @@ class FlowReading{
         print_r($stmt->errorInfo());
         echo "</pre>";
     }
-
-
 }

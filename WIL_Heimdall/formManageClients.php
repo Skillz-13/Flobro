@@ -1,4 +1,12 @@
 <!DOCTYPE html>
+<?php
+    include "GateKeeper.php";
+    include "search.php";
+
+
+    // initialize objects
+
+    ?>
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
