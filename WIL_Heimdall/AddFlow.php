@@ -11,10 +11,12 @@ include_once "GateKeeper.php";
 </head>
 <body>
 <?php
-
 if(isset($_GET['imei'])) {
 
     //session_start();
+
+    //port limit security
+    $port_limit = 4;
 
     $GateKeeper = new GateKeeper();
     $dbKey = $GateKeeper->getConnection();
@@ -37,12 +39,14 @@ if(isset($_GET['imei'])) {
 
         echo "found IMEI";
 
-        $currentReading->LOG_DATE =  date('Y-m-d H:i:s', $_SERVER['REQUEST_TIME']);
-        $currentReading->ARD_IMEI_NUMBER = $_GET['imei'];
-        $currentReading->PORT_NUMBER = $_GET['port_number'];
-        $currentReading->VOLUME = $_GET['volume'];
-        $currentReading->TEMPERATURE = 12;
-        //$currentReading->LOG_ENTRY = null;
+        if($_GET['port_number'] <= $port_limit) {
+            $currentReading->LOG_DATE = date('Y-m-d H:i:s', $_SERVER['REQUEST_TIME']);
+            $currentReading->ARD_IMEI_NUMBER = $_GET['imei'];
+            $currentReading->PORT_NUMBER = $_GET['port_number'];
+            $currentReading->VOLUME = $_GET['volume'];
+            $currentReading->TEMPERATURE = 12;
+            //$currentReading->LOG_ENTRY = null;
+        }
 
         echo ($_SERVER['REQUEST_TIME']);
 

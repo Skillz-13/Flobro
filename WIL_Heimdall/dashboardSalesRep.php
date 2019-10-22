@@ -18,13 +18,18 @@
 				<a name="btnManageClients"id="btnManageClients" class="btn" href="formManageClients.php"><p>Manage Clients</p></a>
 				<a id="btnClientReport" class="btn" href=""><p>Client Reports</p></a>
 				<a id="btnSalesReports" class="btn" href=""><p>Sales Reports</p></a>
-				<a id="btnFaultLogging" class="btn" href=""><p>Fault Logging</p></a>
+				<a id="btnFaultLogging" class="btn" href="formNotes.php"><p>Notes</p></a>
 				<a id="btnLogout" class="btn" href="logout.php"><p>Log Out</p></a>
 		</div>
 		<!--HEADER PANEL-->
         <div class="panelHeader">
 			<div id="lblWelcomeMessage">
 			<p>Sales Representative Dashboard</p>
+                <?php
+                session_start();
+                echo ($_SESSION['role_id']);
+                echo ($_SESSION['valid']);
+                ?>
 			<p>You are logged in as -Name- -Surname-</p>
 			</div>
 		</div>

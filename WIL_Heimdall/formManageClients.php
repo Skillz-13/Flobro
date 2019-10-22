@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <?php
+    include "GateKeeper.php";
+    include "search.php";
+
+
+    // initialize objects
+
+    ?>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -8,6 +16,8 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 <link rel="stylesheet" href="css/main.css" type="text/css">
 <link rel="stylesheet" href="css/formManageClients.css" type="text/css">
+
+
 </head>
 <body style="background-image: url(images/woodtexture.jpg);">
 	<div class="container">

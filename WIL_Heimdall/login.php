@@ -2,12 +2,14 @@
 include "config.php";
 include_once "GateKeeper.php";
 include_once "Objects/Users.php";
+
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <?php
+    //session_start();
     //include_once "config.php";
     $page_title = "Login";
     //login checker
