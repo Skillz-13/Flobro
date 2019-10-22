@@ -3,6 +3,8 @@ class Graph{
 
     function generateGraph($IMEI, $START_DATE, $END_DATE){
 
+        $connect = mysqli_connect("localhost", "root", "", "bostoczw_test");
+
         // Query to get all the specific beer type each flowmeter connected to the arduino
         $headingQuery =
             "SELECT  PORT_NUMBER, BEER_NAME FROM `tbl_arduino` 

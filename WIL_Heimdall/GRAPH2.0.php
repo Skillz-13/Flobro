@@ -1,6 +1,8 @@
 <?php
 
 $IMEI = 867858033068951;
+$START_DATE = "insert datetime here";
+$END_DATE = "insert datetime here";
 $connect = mysqli_connect("154.0.168.131:3306", "bostoczw_Matt", "TestScript", "bostoczw_test");
 
 // Query to get all the specific beer type each flowmeter connected to the arduino
