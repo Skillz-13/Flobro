@@ -1,4 +1,12 @@
 <!DOCTYPE html>
+<?php
+    include "GateKeeper.php";
+    include "search.php";
+
+
+    // initialize objects
+
+    ?>
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
@@ -15,11 +23,11 @@
 		<div class="panelNavBar">
 			<img id="imgLogo" src="images/logoBoston.png">
 			<div id="lblCurrentPage"><p><b>Manage Clients</b></p></div>
-				<a id="btnHome" class="btn" href="dashboardSalesRep.php"><p>Home</p></a>
-				<a id="btnClientReport" class="btn" href=""><p>Client Reports</p></a>
-				<a id="btnSalesReports" class="btn" href=""><p>Sales Reports</p></a>
-				<a id="btnFaultLogging" class="btn" href=""><p>Fault Logging</p></a>
-				<a id="btnLogout" class="btn" href="logout.php"><p>Log Out</p></a>
+				<a name="btnHome" id="btnHome" class="btn" href="dashboardSalesRep.php"><p>Home</p></a>
+				<a name="btnClientReport" id="btnClientReport" class="btn" href="formClientReport.php"><p>Client Reports</p></a>
+				<a name="btnSalesReports" id="btnSalesReports" class="btn" href="formSalesReport.php"><p>Sales Reports</p></a>
+				<a name="btnNotes" id="btnNotes" class="btn" href="formNotes.php"><p>Notes</p></a>
+				<a name="btnLogout" id="btnLogout" class="btn" href="logout.php"><p>Log Out</p></a>
 		</div>
 		<!--HEADER PANEL-->
         <div class="panelHeader">
