@@ -1,7 +1,14 @@
 <!DOCTYPE html>
+<?php
+    include "GateKeeper.php";
+    include "search.php";
+
+
+    // initialize objects
+
+    ?>
 <html lang="en">
 <head>
-
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -9,8 +16,6 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 <link rel="stylesheet" href="css/main.css" type="text/css">
 <link rel="stylesheet" href="css/formManageClients.css" type="text/css">
-
-
 </head>
 <body style="background-image: url(images/woodtexture.jpg);">
 	<div class="container">
@@ -18,11 +23,11 @@
 		<div class="panelNavBar">
 			<img id="imgLogo" src="images/logoBoston.png">
 			<div id="lblCurrentPage"><p><b>Manage Clients</b></p></div>
-				<a id="btnHome" class="btn" href="dashboardSalesRep.php"><p>Home</p></a>
-				<a id="btnClientReport" class="btn" href=""><p>Client Reports</p></a>
-				<a id="btnSalesReports" class="btn" href=""><p>Sales Reports</p></a>
-				<a id="btnFaultLogging" class="btn" href=""><p>Fault Logging</p></a>
-				<a id="btnLogout" class="btn" href="logout.php"><p>Log Out</p></a>
+				<a name="btnHome" id="btnHome" class="btn" href="dashboardSalesRep.php"><p>Home</p></a>
+				<a name="btnClientReport" id="btnClientReport" class="btn" href="formClientReport.php"><p>Client Reports</p></a>
+				<a name="btnSalesReports" id="btnSalesReports" class="btn" href="formSalesReport.php"><p>Sales Reports</p></a>
+				<a name="btnNotes" id="btnNotes" class="btn" href="formNotes.php"><p>Notes</p></a>
+				<a name="btnLogout" id="btnLogout" class="btn" href="logout.php"><p>Log Out</p></a>
 		</div>
 		<!--HEADER PANEL-->
         <div class="panelHeader">
