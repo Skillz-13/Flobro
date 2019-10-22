@@ -1,7 +1,7 @@
 <?php
 
 $IMEI = 867858033068951;
-$connect = mysqli_connect("localhost", "root", "", "bostoczw_test");
+$connect = mysqli_connect("154.0.168.131:3306", "bostoczw_Matt", "TestScript", "bostoczw_test");
 
 // Query to get all the specific beer type each flowmeter connected to the arduino
 $headingQuery =
@@ -10,6 +10,7 @@ $headingQuery =
     Join tbl_flowmeter on tbl_flowmeter.FM_ID = tbl_beer_fm.FM_ID
     JOIN tbl_beer on tbl_beer_fm.BEER_ID = tbl_beer.BEER_ID
     WHERE ARD_IMEI_NUMBER = $IMEI
+    BETWEEN $START_DATE AND $END_DATE
     ORDER BY PORT_NUMBER
 ";
 
