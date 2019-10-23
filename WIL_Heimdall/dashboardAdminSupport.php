@@ -23,7 +23,7 @@
 			<img id="imgLogo" src="images/logoBoston.png">
 			<div id="lblCurrentPage"><p><b>Home</b></p></div>
 				<a name="btnManageLocations" id="btnManageLocations" class="btn" href="formManageLocations.php"><p>Manage Locations</p></a>
-				<a name="btnManageUsers" id="btnManageUsers" class="btn" href="formManageUsers.php"><p>Manage Users</p></a>
+				<a name="btnManageUsers" id="btnManageUsers" class="btn" href="adminManageUsers.php"><p>Manage Users</p></a>
 				<a name = "btnAssignSalesRep" id="btnAssignSalesRep" class="btn" href="formAssignSalesRep.php"><p>Assign Sales Rep</p></a>
 				<a name="btnReports" id="btnReports" class="btn" href=""><p>Reports</p></a>
 				<a id="btnLogout" class="btn" href="logout.php"><p>Log Out</p></a>

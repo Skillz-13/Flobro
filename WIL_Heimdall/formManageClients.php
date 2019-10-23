@@ -2,10 +2,19 @@
 <?php
     include "GateKeeper.php";
     include "search.php";
-
-
+    include "config.php";
     // initialize objects
+    if (!empty($_SESSION['role_id'])) {
+        if (((int)$_SESSION['role_id'] == 3 || (int)$_SESSION['role_id'] == 4 || (int)$_SESSION['role_id'] == 1 ) && (int)$_SESSION['valid'] == 1 ) {
+            //header("Location: {$home_url}dashboardAdminSupport.php");
+            //echo '<pre>' . print_r($_SESSION['role_id'], TRUE) . '</pre>';
+        }else{
+            header("Location: {$home_url}login.php?action=access_denied");
+        }
 
+    }else{
+        header("Location: {$home_url}login.php?action=login_denied");
+    }
     ?>
 <html lang="en">
 <head>
@@ -55,66 +64,14 @@
 						<!--CONTENT OF TABLE-->
 						<div id="divTableClientsContent" style="width:100%; height:300px; overflow:auto;">
 							<table name="tblClientsContent" id = "tblClientsContent" class="tblClients">
-								<tr>
-									<td>Tiger's Milk</td>
-									<td>Claremont</td>
-								</tr>
-								<tr>
-									<td>Slug and Lettuce</td>
-									<td>Newlands</td>
-								</tr>
-								<tr>
-									<td>Oroboros</td>
-									<td>Muizenberg</td>
-								</tr>
-								<tr>
-									<td>Tiger's Milk</td>
-									<td>Claremont</td>
-								</tr>
-								<tr>
-									<td>Slug and Lettuce</td>
-									<td>Newlands</td>
-								</tr>
-								<tr>
-									<td>Oroboros</td>
-									<td>Muizenberg</td>
-								</tr>
-								<tr>
-									<td>Tiger's Milk</td>
-									<td>Claremont</td>
-								</tr>
-								<tr>
-									<td>Slug and Lettuce</td>
-									<td>Newlands</td>
-								</tr>
-								<tr>
-									<td>Oroboros</td>
-									<td>Muizenberg</td>
-								</tr>
-								<tr>
-									<td>Tiger's Milk</td>
-									<td>Claremont</td>
-								</tr>
-								<tr>
-									<td>Slug and Lettuce</td>
-									<td>Newlands</td>
-								</tr>
-								<tr>
-									<td>Oroboros</td>
-									<td>Muizenberg</td>
-								</tr>
-								<tr>
-									<td>Tiger's Milk</td>
-									<td>Claremont</td>
-								</tr>
-								<tr>
-									<td>Slug and Lettuce</td>
-									<td>Newlands</td>
-								</tr>
-								<tr>
-									<td>Oroboros</td>
-									<td>Muizenberg</td>
-								</tr>
+                                <?php
+
+
+
+
+                                ?>
+
+
 							</table>  
 						</div>
 					</td>

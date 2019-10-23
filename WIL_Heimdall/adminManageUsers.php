@@ -1,7 +1,10 @@
+<?php include_once "config.php";  ?>
 <!DOCTYPE html>
 <?php
     include "GateKeeper.php";
-    include "search.php";
+    include_once "Objects/Users.php";
+    include_once "libs/Utils.php";
+    //include "search.php";
 
 
     // initialize objects
@@ -39,10 +42,35 @@
 		<!--MAIN PANEL-->
 		<div class="panelMain">
 			<select name="ddlUserType" id="ddlUserType">
-			
-                    <option value="Sales Representatives">placeholder 1</option>
-                    <option value="Bar Manager">placeholder 2</option>
-                   
+                <option value="0">SELECT</option>
+                <?php
+
+
+                $dbh;
+
+                try {
+                    $dbh = new PDO("mysql:host=localhost;dbname=bostoczw_Test", "bostoczw_Matt", "TestScript");
+                    $dbh->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ);
+                } catch(PDOException $e) {
+                    echo $e->getMessage();
+                }
+
+                $query = "SELECT ROLE_ID, ROLE_NAME FROM tbl_role";
+                $stmt = $dbh->prepare( $query );
+
+                $stmt->execute();
+                $roles = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                if ($roles !== false) {
+
+                    foreach ($roles  as $row) {
+                        ;
+                        echo("<option value=" . $row['[ROLE_ID]'] . ">" . $row['ROLE_NAME'] . "</option>");
+                    }
+                }
+                echo "<pre>";
+                echo ($roles);
+                echo "</pre>";
+                ?>
                 </select>
 				
 					
@@ -64,10 +92,45 @@
                         <!--CONTENT OF TABLE-->
                         <div id="divTableUsersContent" style="width:100%; height:200px; overflow:auto;">
                             <table name="tblUsersContent" id = "tblUsersContent" class="tblUsers">
-                                <tr>
-                                    <td>Name</td>
-                                    <td>Surname</td>
-                                </tr>
+                                <?php
+
+                                //$user_id = $_SESSION['user_id'];
+                                $dbh;
+
+                                try {
+                                    $dbh = new PDO("mysql:host=localhost;dbname=bostoczw_Test", "bostoczw_Matt", "TestScript");
+                                    $dbh->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ);
+                                } catch(PDOException $e) {
+                                    echo $e->getMessage();
+                                }
+                                $valid = 1;
+
+                                //query the database, loop through the results, and output the rows
+                                $query = "SELECT * FROM tbl_user WHERE VALID = ?";
+                                $stmt = $dbh->prepare( $query );
+                                $stmt->bindParam(1, $valid);
+                                $stmt->execute();
+                                $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+                                if ($users !== false) {
+                                    foreach ($users as $row){;
+                                        /*$current_name =
+                                        $current_street =
+                                            $current_sub*/
+                                        echo "<tr onclick=''>";
+                                        echo "<td>";
+                                        echo ($row['FIRST_NAME']);
+                                        echo "</td>";
+                                        echo "<td>";
+                                        echo ($row['SURNAME']);
+                                        //echo " , ";
+                                        //echo ($row['SUBURB']);
+                                        echo "</td>";
+                                        echo "</tr>";
+                                    }
+                                }else {
+                                    echo 'The SQL query failed with error '.$dbh->errorCode;}
+                                ?>
                             </table>
                         </div>
                     </td>
@@ -84,6 +147,8 @@
 	<!--MODAL DIALOG BOX FOR ADDING, REMOVING AND UPDATING/VIEWING DETAILED USER INFO-->
 	
 	<!--ADD USER DIALOG FORM-->
+
+
 	<div class="modal fade" id="dialogAddUser" tabindex="-1" role="dialog" aria-labelledby="lblAddUser" aria-hidden="true">
 		<div class="modal-dialog modal-dialog-centered" role="document">
 			<div class="modal-content">
@@ -94,8 +159,9 @@
 					</button>
 				</div>
 				<div class="modal-body">
-				<form>
+
 					<div class="form-group">
+                        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>"  method="post">
 						<h5><u>Add new User</u></h5>
 						<label for="txtBoxName" class="col-form-label">Name:</label>
 						<input name="txtBoxName" type="text" class="form-control" id="txtBoxVenueName">
@@ -104,29 +170,101 @@
 						<label for="txtBoxContactNumber" class="col-form-label">Contact Number:</label>
 						<input name="txtBoxContactNumber" type="tel" class="form-control" id="txtBoxContactNumber" pattern="[0-9]{10}">
 						<label for="txtBoxEmail" class="col-form-label">Email:</label>
-						<input name="txtBoxVatNumber" type="email" class="form-control" id="txtBoxVatNumber">
+						<input name="txtBoxEmail" type="email" class="form-control" id="txtBoxVatNumber">
 						<label for="ddlRole" class="col-form-label">Role:</label>
 						<select name="ddlUserType" id="ddlUserType" class="form-control">
-						<option value="Sales Representatives">Sales Rep</option>
-						<option value="Bar Manager">Bar Manager</option>
+                            <option value="0">SELECT</option>
+                            <?php
+
+                                $dbh;
+
+                                try {
+                                    $dbh = new PDO("mysql:host=localhost;dbname=bostoczw_Test", "bostoczw_Matt", "TestScript");
+                                    $dbh->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ);
+                                } catch(PDOException $e) {
+                                    echo $e->getMessage();
+                                }
+
+                                $query = "SELECT ROLE_ID, ROLE_NAME FROM tbl_role";
+                                $stmt = $dbh->prepare( $query );
+
+                            $stmt->execute();
+                            $roles = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                            if ($roles !== false) {
+
+                                foreach ($roles  as $row) {
+                                    ;
+                                    echo("<option value=" . $row['[ROLE_ID]'] . ">" . $row['ROLE_NAME'] . "</option>");
+                                }
+                            }
+                            echo "<pre>";
+                            echo ($roles);
+                            echo "</pre>";
+                            ?>
 							</select>
 						<label for="txtBoxPassword" class="col-form-label">Password:</label>
 						<input name="txtBoxPassword" type="password" class="form-control" id="txtBoxVenueName">
 						<label for="txtBoxConfirmPassword" class="col-form-label">Re-enter Password:</label>
 						<input name="txtBoxConfirmPassword" type="password" class="form-control" id="txtBoxVenueName">
-				
 					</div>
 					
-				</form>
+
 				</div>
 				<div class="modal-footer">
 					<button name="btnDismiss" type="button" class="btn-secondary" data-dismiss="modal">Close</button>
-					<button name="btnConfirmAdd" type="button" class="btn-primary">Add User</button>
+                    <!--<a href="adminManageUsers.php" >-->
+                        <input name="btnConfirmAdd" type="submit" class="btn-primary" value="Add User"></input>
+                    <!--</a>-->
+                    <?php
+                        include_once "Objects/Users.php";
+                    if(isset($_POST['btnConfirmAdd'])) {
+
+                        echo "working";
+                        $database = new GateKeeper();
+                        $db = $database->getConnection();
+
+                        $newUser = new Users($db);
+                        $utils = new Utils();
+
+                        $newUser->email = $_POST['txtBoxEmail'];
+
+                        if ($newUser->emailExists()) {
+                            echo "<div class='alert alert-danger'>";
+                            //echo "The email you specified is already registered. Please try again or <a href='{$home_url}login'>login.</a>";
+                            echo "</div>";
+                        }else{
+                            $newUser->first_name=$_POST['txtBoxName'];
+                            $newUser->surname=$_POST['txtBoxSurname'];
+                            $newUser->contact_number=$_POST['contact_number'];
+
+                            $newUser->password = $_POST['password'];
+                            $newUser->role_id = $_POST['taskOption'];
+                            $newUser->role_id = $_POST['ddlUserType'];
+                            $newUser->valid = 1;
+                            /*$_SESSION['user_id'] = $currentUser->user_id;
+                            $_SESSION['role_id'] = $currentUser->role_id;
+                            $_SESSION['valid'] = $currentUser->valid;
+                            $_SESSION['firstname'] = htmlspecialchars($currentUser->first_name, ENT_QUOTES, 'UTF-8');
+                            $_SESSION['surname'] = $currentUser->surname;*/
+
+                            if($newUser->create()){
+                                //$_POST=array();
+                            }else{
+                                //echo "<div class='alert alert-danger' role='alert'>Unable to register. Please try again.</div>";
+                            }
+
+
+                        }
+                    }
+                    ?>
 				</div>
+                </form>
+
+
 			</div>
 		</div>
 	</div>
-	
+
 	<!--REMOVE USER DIALOG CONFIRM-->
 	<div class="modal" tabindex="-1" role="dialog" id="dialogRemoveUser">
 		<div class="modal-dialog modal-dialog-centered" role="document">
