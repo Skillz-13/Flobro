@@ -32,7 +32,11 @@
 		<div class="panelMain">
 			<div class="panelMainUserDisplay">
 			<form>
-				<label for="txtBoxSalesReps" class="col-form-label"><u><h5>Sales Representatives:</h5></u></label>
+				<label for="txtBoxSalesReps" class="col-form-label"><u><h5>Users:</h5></u></label>
+				<select name="ddlUserType" id="ddlUserType" class="form-control">
+					<option value="Sales Representatives">Sales Representative</option>
+					<option value="Bar Manager">Bar Manager</option>
+				</select>
 				<table class="tblUsers" name ="tblUsers">
 				<tr>
 					<td>
@@ -47,7 +51,7 @@
 				<tr>
 					<td>
 						<!--CONTENT OF TABLE-->
-						<div id="divTableUsersContent" style="width:100%; height:360px; overflow:auto;">
+						<div id="divTableUsersContent" style="width:100%; height:340px; overflow:auto;">
 							<table name="tblUsersContent" id = "tblUsersContent" class="tblUsers">
 								<tr>
 									<td>Name</td>
