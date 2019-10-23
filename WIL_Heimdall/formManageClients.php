@@ -42,7 +42,7 @@
         <div class="panelHeader">
 			<div id="lblWelcomeMessage">
 			<p>Sales Representative Dashboard</p>
-			<p>You are logged in as -Name- -Surname-</p>
+			<?php echo "<p>You are logged in as -" .$_SESSION['firstname'] ."- -" .$_SESSION['surname'] ."-</p>" ?>
 			</div>
 		</div>
 		<!--MAIN PANEL-->
@@ -65,13 +65,49 @@
 						<div id="divTableClientsContent" style="width:100%; height:300px; overflow:auto;">
 							<table name="tblClientsContent" id = "tblClientsContent" class="tblClients">
                                 <?php
+                                $user_id = $_SESSION['user_id'];
+                                $dbh;
+
+                                try {
+                                    $dbh = new PDO("mysql:host=localhost;dbname=bostoczw_Test", "bostoczw_Matt", "TestScript");
+                                    $dbh->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ);
+                                } catch(PDOException $e) {
+                                    echo $e->getMessage();
+                                }
+
+                                //query the database, loop through the results, and output the rows
+                                $query = "SELECT USER_ID, tbl_assignment.COMPANY_ID, tbl_assignment.LOCATION_ID, tbl_company.COMPANY_NAME, 
+                                            tbl_location.STREET_NAME, tbl_location.SUBURB, NOTES FROM tbl_assignment 
+                                            JOIN tbl_company ON tbl_assignment.COMPANY_ID = tbl_company.COMPANY_ID 
+                                            JOIN tbl_location ON tbl_assignment.LOCATION_ID = tbl_location.LOCATION_ID WHERE USER_ID = ?";
+                                $stmt = $dbh->prepare( $query );
+                                $stmt->bindParam(1, $user_id);
+
+                                $stmt->execute();
+                                $notes = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+                                if ($notes !== false) {
+
+                                    foreach ($notes as $row){;
+                                        /*$current_name =
+                                        $current_street =
+                                            $current_sub*/
+                                        echo "<tr onclick=''>";
+                                        echo "<td>";
+                                        echo ($row['COMPANY_NAME']);
+                                        echo "</td>";
+                                        echo "<td>";
+                                        echo ($row['STREET_NAME']);
+                                        echo " , ";
+                                        echo ($row['SUBURB']);
+                                        echo "</td>";
+                                        echo "</tr>";
+                                    }
 
 
-
-
+                                }else {
+                                    echo 'The SQL query failed with error '.$dbh->errorCode;}
                                 ?>
-
-
 							</table>  
 						</div>
 					</td>
