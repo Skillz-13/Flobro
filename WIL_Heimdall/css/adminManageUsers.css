@@ -1,0 +1,54 @@
+/*XXXXXXXXXXXXXXX*/
+/*FORM COMPONENTS*/
+
+
+
+#txtBoxSearch::placeholder {  
+    text-align: center; 
+} 
+
+
+/*USERS TABLE*/
+.tblUsers {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  width: 100%;
+  border: 2px solid black;
+  max-height: 20px;
+}
+
+ 
+
+.tblUsers td, .tblUsers th {
+  border: 1px solid gray;
+  width:50%;
+}
+
+ 
+
+.tblUsers tr:nth-child(even){background-color: #f2f2f2;}
+.tblUsers tr:nth-child(odd){background-color: #B9B8B8;}
+
+ 
+
+#tblUsersContent tr:hover {background-color: #8795D8;}
+
+ 
+
+.tblUsers th {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  text-align: center;
+  border: 2px solid black;
+  background-color: #4CAF50;
+  color: white;
+}
+}
+
+/*FORM BUTTONS*/
+.btnAdd, .btnRemove, .btnUpdate {
+    display: inline-block !Important;
+    width: 30% !Important;
+    margin-top: 10px !Important;
+    padding-left: 10px;
+    padding-right: 10px;
+}
