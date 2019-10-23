@@ -111,14 +111,13 @@
 						<input name="txtBoxVatNumber" type="email" class="form-control" id="txtBoxVatNumber">
 						<label for="ddlRole" class="col-form-label">Role:</label>
 						<select name="ddlUserType" id="ddlUserType" class="form-control">
-						<option value="Sales Representatives">Sales Rep</option>
-						<option value="Bar Manager">Bar Manager</option>
-							</select>
+							<option value="Sales Representatives">Sales Representative</option>
+							<option value="Bar Manager">Bar Manager</option>
+						</select>
 						<label for="txtBoxPassword" class="col-form-label">Password:</label>
 						<input name="txtBoxPassword" type="password" class="form-control" id="txtBoxVenueName">
 						<label for="txtBoxConfirmPassword" class="col-form-label">Re-enter Password:</label>
 						<input name="txtBoxConfirmPassword" type="password" class="form-control" id="txtBoxVenueName">
-				
 					</div>
 					
 				</form>
