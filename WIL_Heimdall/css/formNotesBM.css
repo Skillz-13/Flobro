@@ -1,0 +1,78 @@
+/*NOTES TABLE*/
+.tblClients {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  width: 100%;
+  border: 2px solid black;
+  max-height: 20px;
+}
+
+.tblMargin {
+	margin-bottom:10px;
+}
+
+.tblClients td, .tblClients th {
+  border: 1px solid gray;
+  width:50%;
+}
+
+.tblClients tr:nth-child(even){background-color: #f2f2f2;}
+.tblClients tr:nth-child(odd){background-color: #B9B8B8;}
+
+#tblClientsContent tr:hover {background-color: #8795D8;}
+
+.tblClients th {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  text-align: center;
+  border: 2px solid black;
+  background-color: #4CAF50;
+  color: white;
+}
+
+/*DESCRIPTION TABLE*/
+.tblDesc {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  width: 100%;
+  border: 2px solid black;
+  max-height: 20px;
+}
+
+.tblDesc td, .tblDesc th {
+  border: 1px solid gray;
+  width:50%;
+}
+
+.tblDesc tr:nth-child(even){background-color: #f2f2f2;}
+.tblDesc tr:nth-child(odd){background-color: #B9B8B8;}
+
+#tblDescContent tr:hover {background-color: #8795D8;}
+
+.tblDesc th {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  text-align: center;
+  border: 2px solid black;
+  background-color: #4CAF50;
+  color: white;
+}
+
+/*FORM BUTTONS*/
+.btnUpdate {
+	display: inline-block !Important;
+	width: 30% !Important;
+	margin-top: 10px !Important;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+/*TEXT AREA*/
+
+#wrap { position:relative;}
+
+textarea {
+	width:100%;
+	height:100%; 
+	box-sizing: border-box;         /* For IE and modern versions of Chrome */
+	-moz-box-sizing: border-box;    /* For Firefox                          */
+	-webkit-box-sizing: border-box; /* For Safari                           */
+}
