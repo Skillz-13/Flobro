@@ -25,9 +25,9 @@
 			<div id="lblCurrentPage"><p><b>Manage Users</b></p></div>
 				<a name="btnHome" id="btnHome" class="btn" href="dashboardSupportAdmin.php"><p>Home</p></a>
                 <a name="btnManageUsers" id="btnManageUsers" class="btn" href="formManageLocations.php"><p>Manage Locations</p></a>
-                <a name = "btnAssignSalesRep" id="btnAssignSalesRep" class="btn" href="formAssignSalesRep.php"><p>Assign Sales Rep</p></a>
+                <a name="btnAssignSalesRep" id="btnAssignSalesRep" class="btn" href="formAssignSalesRep.php"><p>Assign Sales Rep</p></a>
                 <a name="btnReports" id="btnReports" class="btn" href=""><p>Reports</p></a>
-                <a id="btnLogout" class="btn" href="logout.php"><p>Log Out</p></a>
+                <a name="btnLogout" id="btnLogout" class="btn" href="logout.php"><p>Log Out</p></a>
 		</div>
 		<!--HEADER PANEL-->
         <div class="panelHeader">
@@ -38,23 +38,21 @@
 		</div>
 		<!--MAIN PANEL-->
 		<div class="panelMain">
-			<select name="ddlUserType" id="ddlUserType">
-			
-                    <option value="Sales Representatives">placeholder 1</option>
-                    <option value="Bar Manager">placeholder 2</option>
-                   
-                </select>
-				
-					
-                </select>
-               
-                <table class="tblUsers" name ="tblUsers">
+		<div class="panelMainUserTable">
+		<form>
+			<select name="ddlUserType" id="ddlUserType" class="form-control">
+                <option value="Sales Representatives">Sales Representative</option>
+                <option value="Bar Manager">Bar Manager</option>
+            </select>
+            <table class="tblUsers" name ="tblUsers">
                 <tr>
                     <td>
                         <table id = "tblUsersHeader" class="tblUsers" name = "tblUsersHeader">
                             <tr>
                                 <th>Name</th>
                                 <th>Surname</th>
+								<th>Contact Number</th>
+								<th>Email</th>
                             </tr>
                         </table>
                     </td>
@@ -62,21 +60,27 @@
                 <tr>
                     <td>
                         <!--CONTENT OF TABLE-->
-                        <div id="divTableUsersContent" style="width:100%; height:200px; overflow:auto;">
+                        <div id="divTableUsersContent" style="width:100%; height:300px; overflow:auto;">
                             <table name="tblUsersContent" id = "tblUsersContent" class="tblUsers">
                                 <tr>
                                     <td>Name</td>
                                     <td>Surname</td>
+									<td>Contact Number</td>
+									<td>Email</td>
                                 </tr>
                             </table>
                         </div>
                     </td>
                 </tr>
-            </table>
+			</table>
+		</form>
+		</div>
 			<!--FORM BUTTONS-->
+			<div class="panelMainButtons">
 			<button name="btnAddUser" class="btn btnAdd" data-toggle="modal" data-target="#dialogAddUser"><p>Add</p></button>
 			<button name="btnRemoveUser" class="btn btnRemove" data-toggle="modal" data-target="#dialogRemoveUser"><p>Remove</p></button>
 			<button name="btnViewEditInfo" class="btn btnUpdate" data-toggle="modal" data-target="#dialogViewUpdateUser"><p>View Info/Update</p></button>
+			</div>
 		</div>
 	</div>
 	
