@@ -15,7 +15,7 @@
 <title>Manage Users Form</title>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 <link rel="stylesheet" href="css/main.css" type="text/css">
-<link rel="stylesheet" href="css/adminManageUsers.css" type="text/css">
+<link rel="stylesheet" href="css/formManageUsers.css" type="text/css">
 </head>
 <body style="background-image: url(images/woodtexture.jpg);">
 	<div class="container">
