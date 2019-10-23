@@ -4,7 +4,7 @@
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-<title>Manage Arduino Form</title>
+<title>Manage Arduinos Form</title>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 <link rel="stylesheet" href="css/main.css" type="text/css">
 <link rel="stylesheet" href="css/formManageArduinos.css" type="text/css">
@@ -31,15 +31,13 @@
 		<!--MAIN PANEL-->
 		<div class="panelMain">
 			<div class="panelMainArduinoTable">
-			<form>
-				<label for="txtBoxSalesReps" class="col-form-label"><u><h5>Registered Arduinos:</h5></u></label>
+				<label name="lblRegisteredArduinos" class="col-form-label"><u><h5>Registered Arduinos:</h5></u></label>
 				<table class="tblArduino" name ="tblArduino">
 				<tr>
 					<td>
 						<table id = "tblArduinoHeader" class="tblArduino" name = "tblArduinoHeader">
 							<tr>
-								<th>Name</th>
-								<th>Surname</th>
+								<th>IMEI</th>
 							</tr>
 						</table>
 					</td>
@@ -50,79 +48,26 @@
 						<div id="divTableArduinoContent" style="width:100%; height:340px; overflow:auto;">
 							<table name="tblArduinoContent" id = "tblArduinoContent" class="tblArduino">
 								<tr>
-									<td>Name</td>
-									<td>Surname</td>
+									<td>IMEI</td>
 								</tr>
 							</table>  
 						</div>
 					</td>
 				</tr>
-			</table>
-			</form>
+				</table>
 			</div>
 			
 			<div class="panelMainFormElements">
 			<form>
-			<label for="txtBoxLocation" class="col-form-label"><u><h5>All Locations:</h5></u></label>
-			<table class="tblLocation" name ="tblLocation">
-				<tr>
-					<td>
-						<table id = "tblLocationHeader" class="tblLocation" name = "tblLocationHeader">
-							<tr>
-								<th>Company Name</th>
-								<th>Suburb</th>
-							</tr>
-						</table>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<!--CONTENT OF TABLE-->
-						<div id="divTableLocationContent" style="width:100%; height:100px; overflow:auto;">
-							<table name="tblLocationContent" id = "tblLocationContent" class="tblLocation">
-								<tr>
-									<td>Tiger's Milk</td>
-									<td>Claremont</td>
-								</tr>
-							</table>  
-						</div>
-					</td>
-				</tr>
-			</table>
+			<label for="txtBoxIMEI" class="col-form-label"><h5>IMEI Number:</h5></label>
+			<input type="text" id="txtBoxIMEI" name="txtBoxIMEI" value="" placeholder="IMEI Number" class="form-control">
 			</form>
-			<button name="btnAddLocation" class="btn btnAdd"><p>Add</p></button>
 			</div>
 			
 			<div class="panelMainButtons">
-			<form>
-			<label for="txtBoxAssLocation" class="col-form-label"><u><h5>Assigned Locations:</h5></u></label>
-			<table class="tblAssLocation" name ="tblAssLocation">
-				<tr>
-					<td>
-						<table id = "tblAssLocationHeader" class="tblAssLocation" name = "tblAssLocationHeader">
-							<tr>
-								<th>Company Name</th>
-								<th>Suburb</th>
-							</tr>
-						</table>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<!--CONTENT OF TABLE-->
-						<div id="divTableAssLocationContent" style="width:100%; height:60px; overflow:auto;">
-							<table name="tblAssLocationContent" id = "tblAssLocationContent" class="tblAssLocation">
-								<tr>
-									
-								
-								</tr>
-							</table>  
-						</div>
-					</td>
-				</tr>
-			</table>
-			</form>
-			<button name="btnRemoveLocation" class="btn btnRemove"><p>Remove</p></button>
+				<button name="btnAddArduino" class="btn btnAdd"><p>Add</p></button>
+				<button name="btnRemoveArduino" class="btn btnRemove"><p>Remove</p></button>
+				<button name="btnViewEditArduino" class="btn btnUpdate"><p>View Info/Update</p></button>
 			</div>
 		</div>
 	</div>
