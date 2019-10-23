@@ -1,3 +1,9 @@
+/*ALTERNATE SIZING FOR NAV BAR BUTTONS*/
+
+.btn {
+	height: 9%;
+}
+
 /*INTERFACE CONTAINERS AND PANEL STYLING*/
 .panelMain {
 	display: grid;

@@ -15,7 +15,7 @@
 <title>Manage Users Form</title>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 <link rel="stylesheet" href="css/main.css" type="text/css">
-<link rel="stylesheet" href="css/formManageUsers.css" type="text/css">
+<link rel="stylesheet" href="css/adminManageUsers.css" type="text/css">
 </head>
 <body style="background-image: url(images/woodtexture.jpg);">
 	<div class="container">
@@ -23,8 +23,9 @@
 		<div class="panelNavBar">
 			<img id="imgLogo" src="images/logoBoston.png">
 			<div id="lblCurrentPage"><p><b>Manage Users</b></p></div>
-				<a name="btnHome" id="btnHome" class="btn" href="dashboardSupportAdmin.php"><p>Home</p></a>
-                <a name="btnManageUsers" id="btnManageUsers" class="btn" href="formManageLocations.php"><p>Manage Locations</p></a>
+				<a name="btnHome" id="btnHome" class="btn" href="dashboardAdminSupport.php"><p>Home</p></a>
+				<a name="btnManageLocations" id="btnManageLocations" class="btn" href="formManageLocations.php"><p>Manage Locations</p></a>
+				<a name="btnManageCompanies" id="btnManageCompanies" class="btn" href="formManageCompanies.php"><p>Manage Companies</p></a>
                 <a name="btnAssignSalesRep" id="btnAssignSalesRep" class="btn" href="formAssignSalesRep.php"><p>Assign Sales Rep</p></a>
                 <a name="btnReports" id="btnReports" class="btn" href=""><p>Reports</p></a>
                 <a name="btnLogout" id="btnLogout" class="btn" href="logout.php"><p>Log Out</p></a>
@@ -102,22 +103,22 @@
 					<div class="form-group">
 						<h5><u>Add new User</u></h5>
 						<label for="txtBoxName" class="col-form-label">Name:</label>
-						<input name="txtBoxName" type="text" class="form-control" id="txtBoxVenueName">
+						<input name="txtBoxName" type="text" class="form-control" id="txtBoxName">
 						<label for="txtBoxSurname" class="col-form-label">Surname:</label>
-						<input name="txtBoxSurname" type="text" class="form-control" id="txtBoxEmailAddress">
+						<input name="txtBoxSurname" type="text" class="form-control" id="txtBoxSurname">
 						<label for="txtBoxContactNumber" class="col-form-label">Contact Number:</label>
 						<input name="txtBoxContactNumber" type="tel" class="form-control" id="txtBoxContactNumber" pattern="[0-9]{10}">
 						<label for="txtBoxEmail" class="col-form-label">Email:</label>
-						<input name="txtBoxVatNumber" type="email" class="form-control" id="txtBoxVatNumber">
+						<input name="txtBoxEmail" type="email" class="form-control" id="txtBoxEmail">
 						<label for="ddlRole" class="col-form-label">Role:</label>
 						<select name="ddlUserType" id="ddlUserType" class="form-control">
 							<option value="Sales Representatives">Sales Representative</option>
 							<option value="Bar Manager">Bar Manager</option>
 						</select>
 						<label for="txtBoxPassword" class="col-form-label">Password:</label>
-						<input name="txtBoxPassword" type="password" class="form-control" id="txtBoxVenueName">
+						<input name="txtBoxPassword" type="password" class="form-control" id="txtBoxPassword">
 						<label for="txtBoxConfirmPassword" class="col-form-label">Re-enter Password:</label>
-						<input name="txtBoxConfirmPassword" type="password" class="form-control" id="txtBoxVenueName">
+						<input name="txtBoxConfirmPassword" type="password" class="form-control" id="txtBoxPassword">
 					</div>
 					
 				</form>
@@ -167,25 +168,23 @@
 					<div class="form-group">
 						<h5><u>View/Update User Info</u></h5>
 						<label for="txtBoxName" class="col-form-label">Name:</label>
-						<input name="txtBoxName" type="text" class="form-control" id="txtBoxVenueName">
+						<input name="txtBoxName" type="text" class="form-control" id="txtBoxName">
 						<label for="txtBoxSurname" class="col-form-label">Surname:</label>
-						<input name="txtBoxSurname" type="text" class="form-control" id="txtBoxEmailAddress">
+						<input name="txtBoxSurname" type="text" class="form-control" id="txtBoxSurname">
 						<label for="txtBoxContactNumber" class="col-form-label">Contact Number:</label>
 						<input name="txtBoxContactNumber" type="tel" class="form-control" id="txtBoxContactNumber" pattern="[0-9]{10}">
 						<label for="txtBoxEmail" class="col-form-label">Email:</label>
-						<input name="txtBoxVatNumber" type="email" class="form-control" id="txtBoxVatNumber">
+						<input name="txtBoxEmail" type="email" class="form-control" id="txtBoxEmail">
 						<label for="ddlRole" class="col-form-label">Role:</label>
 							<select name="ddlUserType" id="ddlUserType" class="form-control">
 						<option value="Sales Representatives">Sales Rep</option>
 						<option value="Bar Manager">Bar Manager</option>
 							</select>
 						<label for="txtBoxPassword" class="col-form-label">Password:</label>
-						<input name="txtBoxPassword" type="password" class="form-control" id="txtBoxVenueName">
+						<input name="txtBoxPassword" type="password" class="form-control" id="txtBoxPassword">
 						<label for="txtBoxConfirmPassword" class="col-form-label">Re-enter Password:</label>
-						<input name="txtBoxConfirmPassword" type="password" class="form-control" id="txtBoxVenueName">
-				
+						<input name="txtBoxConfirmPassword" type="password" class="form-control" id="txtBoxPassword">
 					</div>
-					
 				</form>
 				</div>
 				<div class="modal-footer">
