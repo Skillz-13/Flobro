@@ -3,7 +3,9 @@
 $IMEI = 867858033068951;
 $START_DATE = "insert datetime here";
 $END_DATE = "insert datetime here";
-$connect = mysqli_connect("154.0.168.131:3306", "bostoczw_Matt", "TestScript", "bostoczw_test");
+//$connect = mysqli_connect("154.0.168.131:3306", "bostoczw_Matt", "TestScript", "bostoczw_test");
+
+$connect = mysqli_connect("localhost", "root", "", "bostoczw_test");
 
 // Query to get all the specific beer type each flowmeter connected to the arduino
 $headingQuery =
@@ -12,9 +14,10 @@ $headingQuery =
     Join tbl_flowmeter on tbl_flowmeter.FM_ID = tbl_beer_fm.FM_ID
     JOIN tbl_beer on tbl_beer_fm.BEER_ID = tbl_beer.BEER_ID
     WHERE ARD_IMEI_NUMBER = $IMEI
-    BETWEEN $START_DATE AND $END_DATE
     ORDER BY PORT_NUMBER
 ";
+
+//    BETWEEN $START_DATE AND $END_DATE
 
 // Query to get all pouring data for the specific arduino between the specified time
 $dataQuery = "
@@ -92,6 +95,10 @@ $table['rows'] = $rows;
 // Casting the table to a json table to be used by the google api
 $jsonTable = json_encode($table);
 
+
+
+
+//style="width: 100%; height: 500px"
 ?>
 
 
@@ -134,7 +141,8 @@ $jsonTable = json_encode($table);
 <div class="page-wrapper">
     <br />
     <h3 align="center">Graph for (insert company name here)</h3>
-    <div id="line_chart" style="width: 100%; height: 500px"></div>
+    <div id="line_chart" ></div>
 </div>
 </body>
 </html>
+
