@@ -6,8 +6,8 @@ class GateKeeper{
     // specify your own database credentials
     private $host = "localhost";
     private $db_name = "bostoczw_Test";
-    private $username = "bostoczw_Matt";
-    private $password = "TestScript";
+    private $username = "root";
+    private $password = "";
     public $DBconnect;
 
     // get the database connection

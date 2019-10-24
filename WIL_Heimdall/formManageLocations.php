@@ -16,8 +16,9 @@
 			<img id="imgLogo" src="images/logoBoston.png">
 			<div id="lblCurrentPage"><p><b>Manage Locations</b></p></div>
 				<a name="btnHome" id="btnHome" class="btn" href="dashboardAdminSupport.php"><p>Home</p></a>
-				<a name="btnManageUsers" id="btnManageUsers" class="btn" href="formManageUsers.php"><p>Manage Users</p></a>
-				<a name = "btnAssignSalesRep" id="btnAssignSalesRep" class="btn" href="formAssignSalesRep.php"><p>Assign Sales Rep</p></a>
+				<a name="btnManageCompanies" id="btnManageCompanies" class="btn" href="formManageCompanies.php"><p>Manage Companies</p></a>
+				<a name="btnManageUsers" id="btnManageUsers" class="btn" href="adminManageUsers.php"><p>Manage Users</p></a>
+				<a name="btnAssignSalesRep" id="btnAssignSalesRep" class="btn" href="formAssignSalesRep.php"><p>Assign Sales Rep</p></a>
 				<a name="btnReports" id="btnReports" class="btn" href=""><p>Reports</p></a>
 				<a name="btnLogout" id="btnLogout" class="btn" href="logout.php"><p>Log Out</p></a>
 		</div>
@@ -37,9 +38,10 @@
 					<td>
 						<table id = "tblLocationHeader" class="tblLocation" name = "tblLocationHeader">
 							<tr>
-								<th class="id">ID</th>
-								<th class="col1">Province</th>
-								<th class="col2">City</th>
+								<th>Street #</th>
+								<th>Suburb</th>
+								<th>City</th>
+								<th>Province</th>
 							</tr>
 						</table>
 					</td>
@@ -50,9 +52,10 @@
 						<div id="divTableLocationContent" style="width:100%; height:300px; overflow:auto;">
 							<table name="tblLocationContent" id = "tblLocationContent" class="tblLocation">
 								<tr>
-									<td class="id">1</td>
-									<td class="col1">Western Cape</td>
-									<td class="col2">Cape Town</td>
+									<td>Street #</td>
+									<td>Suburb</td>
+									<td>City</td>
+									<td>Province</td>
 								</tr>
 							</table>  
 						</div>
@@ -60,36 +63,7 @@
 				</tr>
 			</table>
 			</div>
-			<div class="panelMainCompanyDisplay">
-			<label for="txtBoxCompany" class="col-form-label"><u><h3>Company:</h3></u></label>
-			<table class="tblCompany" name ="tblCompany">
-				<tr>
-					<td>
-						<table id = "tblCompanyHeader" class="tblCompany" name = "tblCompanyHeader">
-							<tr>
-								<th class="id">ID</th>
-								<th class="col1">Company Name</th>
-								<th class="col2">Suburb</th>
-							</tr>
-						</table>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<!--CONTENT OF TABLE-->
-						<div id="divTableCompanyContent" style="width:100%; height:300px; overflow:auto;">
-							<table name="tblCompanyContent" id = "tblCompanyContent" class="tblCompany">
-								<tr>
-									<td class="id">1</td>
-									<td class="col1">Tiger's Milk</td>
-									<td class="col2">Claremont</td>
-								</tr>
-							</table>  
-						</div>
-					</td>
-				</tr>
-			</table>
-			</div>
+			
 			<!--FORM BUTTONS-->
 			<div class="panelMainButtons">
 			<button name="btnAddLocation" class="btn btnAdd" data-toggle="modal" data-target="#dialogAddLocation"><p>Add</p></button>
@@ -133,21 +107,6 @@
 						<label for="txtBoxLong" class="col-form-label">Longitude:</label>
 						<input name="txtBoxLong" type="text" class="form-control" id="txtBoxLong">
 					</div>
-					<div class="form-group">
-						<h5><u>Company Details</u></h5>
-						<label for="txtBoxBusinessRegNumber" class="col-form-label">Business Reg Number:</label>
-						<input name="txtBoxBusinessRegNumber" type="text" class="form-control" id="txtBoxBusinessRegNumber">
-						<label for="txtBoxCompanyName" class="col-form-label">Company Name:</label>
-						<input name="txtBoxCompanyName" type="text" class="form-control" id="txtBoxCompanyName">
-						<label for="ddlLocation" class="col-form-label">Location:</label>
-						<select name="ddlLocation" id="ddlLocation" class="form-control">
-							<option value="Location">Location</option>
-							<option value="Location">Location</option>
-							<option value="Location">Location</option>
-							<option value="Location">Location</option>
-						</select>
-					</div>
-					
 				</form>
 				</div>
 				<div class="modal-footer">
@@ -210,20 +169,6 @@
 						<input name="txtBoxLat" type="text" class="form-control" id="txtBoxLat">
 						<label for="txtBoxLong" class="col-form-label">Longitude:</label>
 						<input name="txtBoxLong" type="text" class="form-control" id="txtBoxLong">
-					</div>
-					<div class="form-group">
-						<h5><u>Company Details</u></h5>
-						<label for="txtBoxBusinessRegNumber" class="col-form-label">Business Reg Number:</label>
-						<input name="txtBoxBusinessRegNumber" type="text" class="form-control" id="txtBoxBusinessRegNumber">
-						<label for="txtBoxCompanyName" class="col-form-label">Company Name:</label>
-						<input name="txtBoxCompanyName" type="text" class="form-control" id="txtBoxCompanyName">
-						<label for="ddlLocation" class="col-form-label">Location:</label>
-						<select name="ddlLocation" id="ddlLocation" class="form-control">
-							<option value="Location">Location</option>
-							<option value="Location">Location</option>
-							<option value="Location">Location</option>
-							<option value="Location">Location</option>
-						</select>
 					</div>
 				</form>
 				</div>

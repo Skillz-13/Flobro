@@ -1,3 +1,9 @@
+/*ALTERNATE SIZING FOR NAV BAR BUTTONS*/
+
+.btn {
+	height: 9%;
+}
+
 /*INTERFACE CONTAINERS AND PANEL STYLING*/
 
 
@@ -118,7 +124,7 @@
 }
 
 /*FORM BUTTONS*/
-.btnAdd, .btnRemove, .btnUpdate {
+.btnAdd, .btnRemove {
 	display: inline-block !Important;
 	width: 30% !Important;
 	height: 60%;
