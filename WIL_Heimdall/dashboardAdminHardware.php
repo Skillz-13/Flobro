@@ -15,11 +15,11 @@
 		<div class="panelNavBar">
 			<img id="imgLogo" src="images/logoBoston.png">
 			<div id="lblCurrentPage"><p><b>Home</b></p></div>
-				<a name="btnManageArduinos" id="btnManageArduinos" class="btn" href=""><p>Manage Arduinos</p></a>
-				<a name="btnManageFlowmeters" id="btnManageFlowmeters" class="btn" href=""><p>Manage Flowmeters</p></a>
+				<a name="btnManageArduinos" id="btnManageArduinos" class="btn" href="formManageArduinos.php"><p>Manage Arduinos</p></a>
+				<a name="btnManageFlowmeters" id="btnManageFlowmeters" class="btn" href="formManageFlowmeters.php"><p>Manage Flowmeters</p></a>
+				<a name="btnAssignArduino" id="btnAssignArduino" class="btn" href="formAssignArduinos.php"><p>Assign Arduinos</p></a>
 				<a id="-" class="btn" href=""><p>-</p></a>
-				<a id="-" class="btn" href=""><p>-</p></a>
-				<a id="btnLogout" class="btn" href="logout.php"><p>Log Out</p></a>
+				<a name="btnLogout" id="btnLogout" class="btn" href="logout.php"><p>Log Out</p></a>
 		</div>
 		<!--HEADER PANEL-->
         <div class="panelHeader">

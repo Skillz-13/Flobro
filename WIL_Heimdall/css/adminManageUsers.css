@@ -1,64 +1,38 @@
 /*ALTERNATE SIZING FOR NAV BAR BUTTONS*/
 
 .btn {
-	height: 9% !important;
+	height: 9%;
 }
-
-/*STYLING OF IMAGES*/
-
-#imgGraph {
-	display: flex;
-	margin-left: auto;
-	margin-right: auto;
-	margin-top: 15px;
-	width: 100%;
-	max-height: 100%;
-	border: 2px solid black;
-	border-radius: 15px;
-}
-
 
 /*INTERFACE CONTAINERS AND PANEL STYLING*/
-
-
 .panelMain {
 	display: grid;
 	grid-area: 2 / 2 / span 1 / span 1;
-	grid-template-columns: 50% 50%;
+	grid-template-rows: 70% 30%
 	background-color: #349BCE;
 	border: 2px solid #686666;
 	border-radius: 25px;
-	padding: 10px;
 }
 
-.panelMainUserDisplay {
+.panelMainUserTable {
 	display: grid;
-	grid-area: 1 / 1 / span 1 / span 1;
+	grid-area: 1 / 1 / span 1 / span 2;
 	background-color: #349BCE;
-	border: 2px solid #686666;
-	border-radius: 25px;
-	padding: 10px;
 	margin-right:3px;
 }
 
-.panelMainGraphs {
-	display: grid;
-	grid-area: 1 / 2 / span 1 / span 1;
+.panelMainButtons {
+	grid-area: 2 / 1 / span 1 / span 2;
 	background-color: #349BCE;
-	border: 2px solid #686666;
-	border-radius: 25px;
 	padding: 10px;
 }
 
+/*XXXXXXXXXXXXXXX*/
+/*FORM COMPONENTS*/
 
-/*USER TYPE SELECT BOX*/
-
-#ddlUserType {
-  margin-top: 5px;
-  margin-bottom: 5px;
-  height:40px;
-  text-align:center;
-}
+#ddlUserType::placeholder {  
+    text-align: center; 
+} 
 
 /*USERS TABLE*/
 .tblUsers {
@@ -70,7 +44,7 @@
 
 .tblUsers td, .tblUsers th {
   border: 1px solid gray;
-  width:50%;
+  width:25%;
 }
 
 .tblUsers tr:nth-child(even){background-color: #f2f2f2;}
@@ -86,3 +60,14 @@
   background-color: #4CAF50;
   color: white;
 }
+
+/*FORM BUTTONS*/
+.btnAdd, .btnRemove, .btnUpdate {
+    display: inline-block !Important;
+    width: 30% !Important;
+	height:100%;
+    margin-top: 10px !Important;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+

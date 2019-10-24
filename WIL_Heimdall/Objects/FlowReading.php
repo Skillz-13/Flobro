@@ -3,6 +3,7 @@ class FlowReading{
 
     private $DBconnect;
     private $table_check = "tbl_arduino";
+    private $table_second_check = "tbl_ard_fm";
     private $table_name = "tbl_log";
 
     public $ARD_IMEI_NUMBER;
@@ -25,12 +26,12 @@ class FlowReading{
 
     function arduino_exists(){
 
-        $query = "SELECT *
+        $query_1 = "SELECT *
             FROM " . $this->table_check . "
             WHERE ARD_IMEI_NUMBER = ?
             LIMIT 0,1";
 
-        $stmt = $this->DBconnect->prepare( $query );
+        $stmt_1 = $this->DBconnect->prepare( $query_1 );
 
         // sanitize
         //$this->IMEI=htmlspecialchars(strip_tags($this->IMEI));
@@ -39,21 +40,39 @@ class FlowReading{
         $this->ARD_IMEI_NUMBER= $this->ARD_IMEI_NUMBER;
 
         // bind given email value
-        $stmt->bindParam(1, $this->ARD_IMEI_NUMBER);
+        $stmt_1->bindParam(1, $this->ARD_IMEI_NUMBER);
 
         // execute the query
-        $stmt->execute();
+        $stmt_1->execute();
 
         // get number of rows
-        $num = $stmt->rowCount();
+        $num = $stmt_1->rowCount();
+
+        $query_2 = "SELECT *
+            FROM " . $this->table_second_check . "
+            WHERE ARD_IMEI_NUMBER = ?
+            LIMIT 0,1";
+
+        $stmt_2 = $this->DBconnect->prepare( $query_2 );
+        $stmt_2->bindParam(1, $this->ARD_IMEI_NUMBER);
+        $stmt_2->execute();
+        $num_2 = $stmt_2->rowCount();
 
         if($num>0) {
 
-            $row = $stmt->fetch(PDO::FETCH_ASSOC);
-            $this->ARD_IMEI_NUMBER = $row['ARD_IMEI_NUMBER'];
-            $this->valid = $row['VALID'];
-            $this->ARD_FM_ID = $row['FM_ID'];
+            $first_check_row = $stmt_1->fetch(PDO::FETCH_ASSOC);
+            $this->ARD_IMEI_NUMBER = $first_check_row['ARD_IMEI_NUMBER'];
+            $this->valid = $first_check_row['VALID'];
+
+            if($num_2 > 0) {
+
+            $second_check_row = $stmt_2->fetch(PDO::FETCH_ASSOC);
+            $this->ARD_FM_ID = $second_check_row['FM_ID'];
+            echo ($this->ARD_FM_ID);
+            echo "over here";
             return true;
+
+            }
 
         }
         echo "not found";

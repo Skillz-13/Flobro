@@ -1,0 +1,133 @@
+/*ALTERNATE SIZING FOR NAV BAR BUTTONS*/
+
+.btn {
+	height: 9%;
+}
+
+/*INTERFACE CONTAINERS AND PANEL STYLING*/
+
+
+.panelMain {
+	display: grid;
+	grid-area: 2 / 2 / span 1 / span 1;
+	grid-template-columns: 50% 50%;
+	grid-template-rows: 50% 50%
+	background-color: #349BCE;
+	border: 2px solid #686666;
+	border-radius: 25px;
+}
+
+.panelMainUserDisplay {
+	display: grid;
+	grid-area: 1 / 1 / span 2 / span 1;
+	background-color: #349BCE;
+	margin-right:3px;
+}
+
+.panelMainLocationDisplay {
+	display: grid;
+	grid-area: 1 / 2 / span 1 / span 1;
+	background-color: #349BCE;
+	padding-left:5px;
+}
+
+.panelMainAssLocationDisplay {
+	display: grid;
+	grid-area: 2 / 2 / span 1 / span 1;
+	background-color: #349BCE;
+	padding-left:5px;
+}
+
+
+/*USERS TABLE*/
+.tblUsers {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  width: 100%;
+  border: 2px solid black;
+  max-height: 20px;
+}
+
+.tblUsers td, .tblUsers th {
+  border: 1px solid gray;
+  width:50%;
+}
+
+.tblUsers tr:nth-child(even){background-color: #f2f2f2;}
+.tblUsers tr:nth-child(odd){background-color: #B9B8B8;}
+
+#tblUsersContent tr:hover {background-color: #8795D8;}
+
+.tblUsers th {
+  padding-top: 2px;
+  padding-bottom: 2px;
+  text-align: center;
+  border: 2px solid black;
+  background-color: #4CAF50;
+  color: white;
+}
+
+
+/*LOCATION TABLE*/
+.tblLocation {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  width: 100%;
+  border: 2px solid black;
+  max-height: 20px;
+}
+
+
+.tblLocation td, .tblLocation th {
+  border: 1px solid gray !Important;
+  width:50%;
+  
+}
+
+.tblLocation tr:nth-child(even){background-color: #f2f2f2;}
+.tblLocation tr:nth-child(odd){background-color: #B9B8B8;}
+
+#tblLocationContent tr:hover {background-color: #8795D8;}
+
+.tblLocation th {
+  padding-top: 2px;
+  padding-bottom: 2px;
+  text-align: center;
+  border: 2px solid black;
+  background-color: #4CAF50;
+  color: white;
+}
+
+/*AssLocation TABLE*/
+.tblAssLocation {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  width: 100%;
+  border: 2px solid black;
+  max-height: 20px;
+}
+
+.tblAssLocation td, .tblAssLocation th {
+	width:50%;
+  border: 1px solid gray;
+}
+
+.tblAssLocation tr:nth-child(even){background-color: #f2f2f2;}
+.tblAssLocation tr:nth-child(odd){background-color: #B9B8B8;}
+
+#tblAssLocationContent tr:hover {background-color: #8795D8;}
+
+.tblAssLocation th {
+  padding-top: 2px;
+  padding-bottom: 2px;
+  text-align: center;
+  border: 2px solid black;
+  background-color: #4CAF50;
+  color: white;
+}
+
+/*FORM BUTTONS*/
+.btnAdd, .btnRemove {
+	display: inline-block !Important;
+	width: 30% !Important;
+	height: 60%;
+	padding-left: 10px;
+	padding-right: 10px;
+}
