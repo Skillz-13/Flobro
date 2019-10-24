@@ -1,4 +1,3 @@
-<?php include "config.php"; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -41,10 +40,11 @@
 			<div id="lblWelcomeMessage">
 			<p>Sales Representative Dashboard</p>
                 <?php
-                //session_start();
+                session_start();
+                echo ($_SESSION['role_id']);
+                echo ($_SESSION['valid']);
                 ?>
-
-                <?php echo "<p>You are logged in as -" .$_SESSION['firstname'] ."- -" .$_SESSION['surname'] ."-</p>" ?>
+			<p>You are logged in as -Name- -Surname-</p>
 			</div>
 		</div>
 		<!--MAIN PANEL-->

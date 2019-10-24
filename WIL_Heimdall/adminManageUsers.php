@@ -4,16 +4,12 @@
     include "GateKeeper.php";
     include_once "Objects/Users.php";
     include_once "libs/Utils.php";
-
     //include "search.php";
 
 
     // initialize objects
 
     ?>
-<script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.0/jquery.min.js"></script>
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
@@ -23,21 +19,6 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 <link rel="stylesheet" href="css/main.css" type="text/css">
 <link rel="stylesheet" href="css/adminManageUsers.css" type="text/css">
-
-    <?php
-    //login restriction method and code
-    if (!empty($_SESSION['role_id'])) {
-        if (((int)$_SESSION['role_id'] == 1 ) && (int)$_SESSION['valid'] == 1 ) {
-            //header("Location: {$home_url}dashboardAdminSupport.php");
-            //echo '<pre>' . print_r($_SESSION['role_id'], TRUE) . '</pre>';
-        }else{
-            header("Location: {$home_url}login.php?action=access_denied");
-        }
-
-    }else{
-        header("Location: {$home_url}login.php?action=login_denied");
-    }
-    ?>
 </head>
 <body style="background-image: url(images/woodtexture.jpg);">
 	<div class="container">
@@ -55,7 +36,7 @@
         <div class="panelHeader">
 			<div id="lblWelcomeMessage">
 			<p>Support Admin Dashboard</p>
-                <?php echo "<p>You are logged in as -" .$_SESSION['firstname'] ."- -" .$_SESSION['surname'] ."-</p>" ?>
+			<p>You are logged in as -Name- -Surname-</p>
 			</div>
 		</div>
 		<!--MAIN PANEL-->
@@ -167,8 +148,8 @@
 	
 	<!--ADD USER DIALOG FORM-->
 
-<!--aria-labelledby="lblAddUser" aria-hidden="true"-->
-	<div class="modal fade" id="dialogAddUser" tabindex="-1" role="dialog" >
+
+	<div class="modal fade" id="dialogAddUser" tabindex="-1" role="dialog" aria-labelledby="lblAddUser" aria-hidden="true">
 		<div class="modal-dialog modal-dialog-centered" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
@@ -178,18 +159,20 @@
 					</button>
 				</div>
 				<div class="modal-body">
+
 					<div class="form-group">
+                        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>"  method="post">
 						<h5><u>Add new User</u></h5>
-						<label for="first_name" class="col-form-label">Name:</label>
-						<input name="first_name" type="text" class="form-control" id="txtBoxVenueName">
-						<label for="surname" class="col-form-label">Surname:</label>
-						<input name="surname" type="text" class="form-control" id="txtBoxEmailAddress">
-						<label for="contact_number" class="col-form-label">Contact Number:</label>
-						<input name="contact_number" type="tel" class="form-control" id="txtBoxContactNumber" pattern="[0-9]{10}">
-						<label for="email" class="col-form-label">Email:</label>
-						<input name="email" type="email" class="form-control" id="txtBoxVatNumber">
-						<label for="role_id" class="col-form-label">Role:</label>
-						<select name="role_id" id="role_id" class="form-control">
+						<label for="txtBoxName" class="col-form-label">Name:</label>
+						<input name="txtBoxName" type="text" class="form-control" id="txtBoxVenueName">
+						<label for="txtBoxSurname" class="col-form-label">Surname:</label>
+						<input name="txtBoxSurname" type="text" class="form-control" id="txtBoxEmailAddress">
+						<label for="txtBoxContactNumber" class="col-form-label">Contact Number:</label>
+						<input name="txtBoxContactNumber" type="tel" class="form-control" id="txtBoxContactNumber" pattern="[0-9]{10}">
+						<label for="txtBoxEmail" class="col-form-label">Email:</label>
+						<input name="txtBoxEmail" type="email" class="form-control" id="txtBoxVatNumber">
+						<label for="ddlRole" class="col-form-label">Role:</label>
+						<select name="ddlUserType" id="ddlUserType" class="form-control">
                             <option value="0">SELECT</option>
                             <?php
 
@@ -219,8 +202,8 @@
                             echo "</pre>";
                             ?>
 							</select>
-						<label for="password" class="col-form-label">Password:</label>
-						<input name="password" type="password" class="form-control" id="txtBoxVenueName">
+						<label for="txtBoxPassword" class="col-form-label">Password:</label>
+						<input name="txtBoxPassword" type="password" class="form-control" id="txtBoxVenueName">
 						<label for="txtBoxConfirmPassword" class="col-form-label">Re-enter Password:</label>
 						<input name="txtBoxConfirmPassword" type="password" class="form-control" id="txtBoxVenueName">
 					</div>
@@ -230,7 +213,7 @@
 				<div class="modal-footer">
 					<button name="btnDismiss" type="button" class="btn-secondary" data-dismiss="modal">Close</button>
                     <!--<a href="adminManageUsers.php" >-->
-                    <button name="btnConfirmAdd" type="button" class="btn-primary" id="btnConfirmAdd">Add User</button>
+                        <button name="btnConfirmAdd" type="button" class="btn-primary" value="Add User"></button>
                     <script>
                         $(document).ready(function(){
                             $("#dialogAddUser").submit(function() {
@@ -244,32 +227,32 @@
 
                                 //if(first_name != '' && surname != '' && contact_number != '' && email != '' && password != '' && role_id != '')
                                 //{
-                                    $.ajax({
-                                        url:"createUser.php",
-                                        method:"POST",
-                                        data: {first_name:first_name, surname:surname, contact_number:contact_number, email:email password:password, role_id:role_id},
-                                        success:function(data)
-                                        {
+                                $.ajax({
+                                    url:"createUser.php",
+                                    method:"POST",
+                                    data: {first_name:first_name, surname:surname, contact_number:contact_number, email:email password:password, role_id:role_id},
+                                    success:function(data)
+                                    {
 
-                                            //alert(data);
-                                            if(data == 'No')
-                                            {
-                                                alert("Wrong Data");
-                                                $('#dialogAddUser').hide();
-                                                location.reload();
-                                                $('#dialogAddUser').load('localhost/Flobro/WIL_Heimdall/createUser.php');
-                                            }
-                                            else
-                                            {
-                                                $('#dialogAddUser').hide();
-                                                location.reload();
-                                            }
+                                        //alert(data);
+                                        if(data == 'No')
+                                        {
+                                            alert("Wrong Data");
+                                            $('#dialogAddUser').hide();
+                                            location.reload();
+                                            $('#dialogAddUser').load('localhost/Flobro/WIL_Heimdall/createUser.php');
                                         }
-                                    });
+                                        else
+                                        {
+                                            $('#dialogAddUser').hide();
+                                            location.reload();
+                                        }
+                                    }
+                                });
                                 //}
                                 //else
                                 //{
-                                    //alert("Both Fields are required");
+                                //alert("Both Fields are required");
                                 //}
                             });
                             /*$('#logout').click(function(){
@@ -286,8 +269,6 @@
                             });*/
                         });
                     </script>
-                    <!--</a>-->
-
 				</div>
                 </form>
 

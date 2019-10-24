@@ -26,7 +26,7 @@
         <div class="panelHeader">
 			<div id="lblWelcomeMessage">
 			<p>Support Admin Dashboard</p>
-                <?php echo "<p>You are logged in as -" .$_SESSION['firstname'] ."- -" .$_SESSION['surname'] ."-</p>" ?>
+			<p>You are logged in as -Name- -Surname-</p>
 			</div>
 		</div>
 		<!--MAIN PANEL-->

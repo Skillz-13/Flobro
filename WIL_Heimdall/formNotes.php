@@ -75,11 +75,12 @@ include_once "Objects/Notes.php";
 							<table name="tblClientsContent" id = "tblClientsContent" class="tblClients">
 
                                 <?php
+
                                 $user_id = $_SESSION['user_id'];
                                 $dbh;
 
                                         try {
-                                            $dbh = new PDO("mysql:host=localhost;dbname=bostoczw_Test", "bostoczw_Matt", "TestScript");
+                                            $dbh = new PDO("mysql:host=localhost;dbname=bostoczw_Test", "root", "");
                                             $dbh->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ);
                                         } catch(PDOException $e) {
                                             echo $e->getMessage();
@@ -98,11 +99,12 @@ include_once "Objects/Notes.php";
 
                                 if ($notes !== false) {
 
-                               foreach ($notes as $row){;
+                               foreach ($notes as $row){
+                                   $current_id =  $row['LOCATION_ID'];
                                    /*$current_name =
                                    $current_street =
                                        $current_sub*/
-                                   echo "<tr onclick=''>";
+                                   echo '<tr id= "$current_id">';
                                    echo "<td>";
                                    echo ($row['COMPANY_NAME']);
                                    echo "</td>";
@@ -112,12 +114,22 @@ include_once "Objects/Notes.php";
                                    echo ($row['SUBURB']);
                                    echo "</td>";
                                    echo "</tr>";
-                               }
+                               }}
+                               else {
+    echo 'The SQL query failed with error '.$dbh->errorCode;
+}
 
 
-                                }else {
-                                echo 'The SQL query failed with error '.$dbh->errorCode;}
+
                                 ?>
+
+
+
+
+
+
+
+
                             </table>
 						</div>
 					</td>
@@ -142,8 +154,7 @@ include_once "Objects/Notes.php";
 							<table name="tblDescContent" id = "tblDescContent" class="tblDesc">
 								<tr>
 								<div id="wrap">
-                                    <!--rows="6">Once a Location value is selected, the note description will be displayed here-->
-								<textarea id="note_area"  onkeyup="char_count(this.value) value="<?php $_SESSION['note']?>"
+								<textarea id="note_area"  onkeyup="char_count(this.value)"> rows="6">Once a Location value is selected, the note description will be displayed here
 								</textarea>
                                     <span id=count></span>
                                     <script>

@@ -1,12 +1,38 @@
+/*ALTERNATE SIZING FOR NAV BAR BUTTONS*/
+
+.btn {
+	height: 9%;
+}
+
+/*INTERFACE CONTAINERS AND PANEL STYLING*/
+.panelMain {
+	display: grid;
+	grid-area: 2 / 2 / span 1 / span 1;
+	grid-template-rows: 70% 30%
+	background-color: #349BCE;
+	border: 2px solid #686666;
+	border-radius: 25px;
+}
+
+.panelMainUserTable {
+	display: grid;
+	grid-area: 1 / 1 / span 1 / span 2;
+	background-color: #349BCE;
+	margin-right:3px;
+}
+
+.panelMainButtons {
+	grid-area: 2 / 1 / span 1 / span 2;
+	background-color: #349BCE;
+	padding: 10px;
+}
+
 /*XXXXXXXXXXXXXXX*/
 /*FORM COMPONENTS*/
 
-
-
-#txtBoxSearch::placeholder {  
+#ddlUserType::placeholder {  
     text-align: center; 
 } 
-
 
 /*USERS TABLE*/
 .tblUsers {
@@ -16,23 +42,15 @@
   max-height: 20px;
 }
 
- 
-
 .tblUsers td, .tblUsers th {
   border: 1px solid gray;
-  width:50%;
+  width:25%;
 }
-
- 
 
 .tblUsers tr:nth-child(even){background-color: #f2f2f2;}
 .tblUsers tr:nth-child(odd){background-color: #B9B8B8;}
 
- 
-
 #tblUsersContent tr:hover {background-color: #8795D8;}
-
- 
 
 .tblUsers th {
   padding-top: 5px;
@@ -42,13 +60,14 @@
   background-color: #4CAF50;
   color: white;
 }
-}
 
 /*FORM BUTTONS*/
 .btnAdd, .btnRemove, .btnUpdate {
     display: inline-block !Important;
     width: 30% !Important;
+	height:100%;
     margin-top: 10px !Important;
     padding-left: 10px;
     padding-right: 10px;
 }
+
