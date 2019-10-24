@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php
 include_once "Objects/Users.php";
 include "GateKeeper.php";

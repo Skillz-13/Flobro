@@ -15,19 +15,6 @@
     $require_login = true;
     //include_once "login_checker.php";
     ?>
-    <?php
-    if (!empty($_SESSION['role_id'])) {
-    if (((int)$_SESSION['role_id'] == 1 ) && (int)$_SESSION['valid'] == 1 ) {
-    //header("Location: {$home_url}dashboardAdminSupport.php");
-    //echo '<pre>' . print_r($_SESSION['role_id'], TRUE) . '</pre>';
-    }else{
-    header("Location: {$home_url}login.php?action=access_denied");
-    }
-
-    }else{
-    header("Location: {$home_url}login.php?action=login_denied");
-    }
-    ?>
 </head>
 <body style="background-image: url(images/woodtexture.jpg);">
 	<div class="container">

@@ -19,6 +19,13 @@ include_once "Objects/Notes.php";
 <link rel="stylesheet" href="css/formNotes.css" type="text/css">
 
     <?php
+
+    //session_start();
+    //echo '<pre>' . print_r($_SESSION, TRUE) . '</pre>';
+
+
+
+
     //login restriction method and code
         if (!empty($_SESSION['role_id'])) {
             if (((int)$_SESSION['role_id'] == 3 || (int)$_SESSION['role_id'] == 4 || (int)$_SESSION['role_id'] == 1 ) && (int)$_SESSION['valid'] == 1 ) {
@@ -31,6 +38,9 @@ include_once "Objects/Notes.php";
         }else{
             header("Location: {$home_url}login.php?action=login_denied");
         }
+        //)
+        //&& $_SESSION['valid'] == 1 ||
+
     ?>
 
 </head>
